@@ -22,17 +22,7 @@
     <link href="{{asset('backend/assets/css/main.css')}}" rel="stylesheet" />
 
 </head>
-<div class="" dir="ltr">
-<li data-uk-dropdown="{mode:'click',pos:'bottom-right'}">
-                            <a href="#" class="user_action_image"><img class="md-user-image" src="" alt=""/></a>
-                            <div class="uk-dropdown uk-dropdown-small">
-                                <ul class="uk-nav js-uk-prevent">
-                                    <li><a href="#">Logout</a></li>
-                                </ul>
-                            </div>
-                        </li>
 
-</div>
 
 <body class="" dir="rtl">
     <div class="wrapper ">
@@ -64,6 +54,22 @@
                         </a>
                     </li>
                     <li>
+
+
+                    <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="now-ui-icons users_single-02"></i>
+                                    <p>
+                                        <span class="">طلاب</span>
+                                    </p>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">ضافه </a>
+                                    <a class="dropdown-item" href="#">عرض</a>
+                                    <a class="dropdown-item" href="#">حذف</a>
+                                </div>
+                            </li>
+
                         <a href="{{asset('backend/examples/map.html')}}">
                             <i class="now-ui-icons location_map-big"></i>
                             <p>المدرسين</p>
@@ -105,7 +111,54 @@
         <div class="main-panel">
 
               <div class="panel-header panel-header-sm">
+              <div class="" dir="ltr">
+<!-- <li data-uk-dropdown="{mode:'click',pos:'bottom-right'}">
+                            <a href="" class="user_action_image"><img class="md-user-image" width="5%" height="5%" src="{{URL::asset('/images/asd.png')}}" alt=""/></a>
+                            <div class="uk-dropdown uk-dropdown-small">
+                                <ul class="uk-nav js-uk-prevent">
+                                    <li><a href="http://127.0.0.1:8000/login">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li> -->
 
+
+
+
+ 
+      
+ <li>
+                        <a href="http://127.0.0.1:8000/login">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>تسجيل خروج </p>
+                        </a>
+                    </li>
+                    </div>
+
+
+
+
+
+                    </div>
+
+  
+    <!-- Menu Footer-->
+    <li class="user-footer">
+      
+    </li>
+  </ul>
+</li>    
+<!-- Tasks Menu -->
+
+
+
+</ul>
+                        
+
+
+
+
+
+</div>
               </div>
 </section>
 @yield('content')
