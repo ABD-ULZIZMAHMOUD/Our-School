@@ -1,0 +1,20 @@
+/* الصفحة الرئيسية */
+
+.sidebar, .off-canvas-sidebar {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  width: 260px;
+  right: 0;
+  z-index: 1030;
+}
+
+.main-panel {
+  float:left;
+}
+
+.nav {
+  padding-right: 0;
+}
+/* الصفحة الرئيسية */

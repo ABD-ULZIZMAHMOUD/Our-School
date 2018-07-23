@@ -1,0 +1,1 @@
+@extends('AdminView.examples.master')
