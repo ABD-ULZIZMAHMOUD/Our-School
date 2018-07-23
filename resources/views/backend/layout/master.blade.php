@@ -22,6 +22,17 @@
     <link href="{{asset('backend/assets/css/main.css')}}" rel="stylesheet" />
 
 </head>
+<div class="" dir="ltr">
+<li data-uk-dropdown="{mode:'click',pos:'bottom-right'}">
+                            <a href="#" class="user_action_image"><img class="md-user-image" src="" alt=""/></a>
+                            <div class="uk-dropdown uk-dropdown-small">
+                                <ul class="uk-nav js-uk-prevent">
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+</div>
 
 <body class="" dir="rtl">
     <div class="wrapper ">

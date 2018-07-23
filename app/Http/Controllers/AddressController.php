@@ -15,7 +15,7 @@ class AddressController extends Controller
     $flag=  $address->addAddress($request['flatnum'],$request['bulidingnum'],$request['street'],
       $request['region'],$request['governorate'],$request['country']);
 
-        return view ("show_Address");
+        return view ("show_Address")->with('success-msg', 'تم التسجيل بنجاح');
 
 
 
