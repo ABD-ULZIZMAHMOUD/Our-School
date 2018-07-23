@@ -23,17 +23,19 @@
 
     <div id="login">
        
-        <form method="post" action="#">
-
+        <form method="post" action="http://localhost/OurSchool/public/adminlogin">
+            {{csrf_field()}}
         <span class="fontawesome-user"></span>
+            <center>
         <input type="text" id="user" name="username" placeholder="username">
-       
+                           @include('alerts')
         <span class="fontawesome-lock"></span>
         <input type="password" name="password"  placeholder="password">
         
         <input type="submit" value=" login">
+            </center>
 <p>
-<?php 
+<?php
 if($errors->any())
 {
 ?>

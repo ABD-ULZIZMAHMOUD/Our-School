@@ -1,26 +1,26 @@
 <!--------------- This Code For Any Success Message --------------->
-@if(session('success-msg'))
-    <div class="alert alert-success alert-dismissible text-center" role="alert">
+@if(session('Notfound'))
+    <div class="alert alert-danger alert-dismissible text-center" role="alert">
 <!--
         <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="text-align: left">
               <span aria-hidden="true">&times;</span>
         </button>
 -->
-        <i class="fa fa-check-circle"></i>
-            {{session('success-msg')}}
+        <i class="fa fa-exclamation-triangle"></i>
+        {{session('Notfound')}}
     </div>
 @endif
 <!--------------- This Code For Any Success Message --------------->
 
 <!--------------- This Code For Any Danger Message --------------->
-@if(session('danger-msg'))
+@if(session('WrongPassword'))
     <div class="alert alert-danger alert-dismissible text-center" role="alert">
 <!--
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
         </button>
 -->
-        <i class="fa fa-exclamation-triangle"></i> {{session('danger-msg')}}
+        <i class="fa fa-exclamation-triangle"></i> {{session('WrongPassword')}}
     </div>
 @endif
 <!--------------- This Code For Any Danger Message --------------->

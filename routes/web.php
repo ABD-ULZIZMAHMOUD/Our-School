@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    return view('backend.dashboard');
+    return view('backend.login');
 });
 
 Route::get('/address', function () {
@@ -23,4 +23,6 @@ Route::get('/add', function () {
     return view ('Add_Address');
 });
 
+
 Route::post('/addAddress', 'AddressController@store');
+Route::post('/adminlogin', 'AdminController@validAdmin');
