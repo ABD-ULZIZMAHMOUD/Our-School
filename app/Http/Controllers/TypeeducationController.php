@@ -13,42 +13,56 @@ class TypeeducationController extends Controller
 
         $this->validate($request, [
 
-           'name' => 'required'
+            'name' => 'required'
 
         ]);
+        $count =Typeeducation::where('name', $request->name)->count();
 
+        if ($count!=0){
+            return Redirect::back()->with('WrongPassword',"هذه نوع الدراسه  موجود من قبل الرجاء ادخال نوع اخر ");
+
+        }
         $type= new Typeeducation();
-        $result=  $type->addtype($request['name']);
-        if($result['error']==0){
-             return redirect('/alltypes');
-         }
+        $type->name=$request['name'];
+        $type->save();
 
-         return view("error");
+        return redirect('/educationType/allTypes');
+
+
     }
     public function  getalltypes(){
 
 
-        //$type= new Typeeducation();
+
         $allTypes = Typeeducation::all();
         return view ("backend.alltypes",compact('allTypes'));
 
 
     }
 
-    public function edittype($id,$name){
+    public function edittype(Request $request){
 
-        $type =Typeeducation::find($id,$name);
+        $this->validate($request, [
 
-        $type->name = $name;
-        $name->save();
-        $json = array("error"=>"0");
-        return $json;
+            'name' => 'required'
+
+        ]);
+        $type =Typeeducation::find($request['$name']);
+
+        $type->name = $request['$name'];
+        $type->save();
+        return redirect('/alltypes');
     }
 
-    public function deletetype($id){
-        $type=Typeeducation::find($id)->delete();
-        $json = array("error"=>"0");
-        return $json;
+    public function deletetype(Request $request){
+        $this->validate($request, [
+
+            'name' => 'required'
+
+        ]);
+
+        Typeeducation::find($request['name'])->delete();
+        return redirect('/alltypes');
 
     }
 }

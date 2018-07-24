@@ -38,10 +38,24 @@ Route::get('/addtypeto', function () {
     return view ('backend.addtype');
 });
 
-Route::prefix('educationType')->group(function() {
-    Route::post('/addType', 'TypeeducationController@addtype');
-    Route::get('/allTypes', 'TypeeducationController@getalltypes');
+Route::prefix('studyType')->group(function() {
+    Route::post('/addType', 'TypeofstudeyController@addtype');
+    Route::get('/allTypes', 'TypeofstudeyController@getalltypes');
 
+});
+
+Route::prefix('educationType')->group(function() {
+    Route::post('/addType', 'TypeofstudeyController@addtype');
+    Route::get('/allTypes', 'TypeofstudeyController@getalltypes');
+
+});
+
+Route::get('/addstudy', function () {
+    return view ('backend.studyphase');
+});
+
+Route::get('/addEtucationType', function () {
+    return view ('backend.educationphase');
 });
 
 Route::post('/addAddress', 'AddressController@store');

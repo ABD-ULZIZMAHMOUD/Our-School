@@ -18,12 +18,12 @@
 
 
                               @include('alerts')
-                              <form method="post" action="http://localhost/OurSchool/public/xxxxx">
+                              <form method="post" action="http://localhost/OurSchool/public/studyType/addType">
                                   {{csrf_field()}}
                                   <div class="form-group row">
                                     <label for="example-text-input" class="col-2 col-form-label">اسم المرحلة الدراسية</label>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" value="اسم المرحلة الدراسية" id="name" class="name">
+                                        <input class="form-control" type="text" value="اسم المرحلة الدراسية"  name="name" id="name" class="name">
                                     </div>
                                 </div>
 

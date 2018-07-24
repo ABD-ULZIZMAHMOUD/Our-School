@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Typeofstudey;
+use Illuminate\Support\Facades\Redirect;
 class TypeofstudeyController extends Controller
 {
     public function addtype(Request $request){
@@ -13,16 +14,17 @@ class TypeofstudeyController extends Controller
             'name' => 'required'
 
         ]);
-        $count =Typeofstudey::where('name',$request['$name'])->count();
+        $count =Typeofstudey::where('name', $request->name)->count();
 
         if ($count!=0){
             return Redirect::back()->with('WrongPassword',"هذه نوع الدراسه  موجود من قبل الرجاء ادخال نوع اخر ");
+
         }
         $type= new Typeofstudey();
         $type->name=$request['name'];
         $type->save();
 
-        return redirect('/alltypes');
+        return redirect('/studyType/allTypes');
 
 
     }

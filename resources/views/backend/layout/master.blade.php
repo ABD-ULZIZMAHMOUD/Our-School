@@ -230,9 +230,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <ul class="nav nav-second-level">
                             <li> <a href="">اضافه مرحلة تعليمية</a> </li>
                             <li> <a href="">مراحل التعليم </a> </li>
-                            <li> <a href="http://127.0.0.1:8000/studyphase">اضافه نوع الدراسة</a> </li>
+                            <li> <a href="http://localhost/OurSchool/public/studyphase">اضافه نوع الدراسة</a> </li>
                             <li> <a href="#">انواع الدراسه </a> </li>
-                            <li> <a href="http://127.0.0.1:8000/educationphase">اضافه مرحله دراسيه </a> </li>
+                            <li> <a href="http://localhost/OurSchool/public/educationphase">اضافه مرحله دراسيه </a> </li>
                             <li> <a href="#">مراحل الدراسه</a> </li>
                         </ul>
                     </li>
