@@ -14,9 +14,17 @@ Route::get('/dashboard', function () {
     return view('backend.dashboard');
 });
 
-Route::get('/address', function () {
-    return view ('backend.address');
+Route::get('/educationphase', function () {
+    return view ('backend.educationphase');
 });
+
+
+
+Route::get('/studyphase', function () {
+    return view ('backend.studyphase');
+});
+
+
 
 Route::get('/login', function () {
     return view ('backend.login');
