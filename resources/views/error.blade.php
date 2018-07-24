@@ -1,1 +1,4 @@
-@extends('AdminView.examples.master')
+error massage
+
+
+
