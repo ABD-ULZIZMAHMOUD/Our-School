@@ -50,7 +50,7 @@ Route::prefix('studyType')->group(function() {
 });
 
 Route::prefix('educationType')->group(function() {
-    Route::post('/addType', 'TTypeeducationController@addtype');
+    Route::post('/addType', 'TypeeducationController@addtype');
     Route::get('/allTypes', 'TypeeducationController@getalltypes');
     Route::get('/delete/{id}', 'TypeeducationController@deletetype');
     Route::get('/edit/{id}', 'TypeeducationController@gettype');

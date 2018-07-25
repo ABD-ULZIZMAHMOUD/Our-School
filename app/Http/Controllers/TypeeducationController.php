@@ -35,32 +35,30 @@ class TypeeducationController extends Controller
 
 
         $allTypes = Typeeducation::all();
-        return view ("backend.alltypes",compact('allTypes'));
+        return view ("backend.showeducation",compact('allTypes'));
 
 
     }
+    public function gettype($id){
 
-    public function edittype(Request $request){
+        $user = Typeeducation::find($id);
+        return view ("backend.editstudy",compact('user'));
 
-        $this->validate($request, [
 
-            'name' => 'required'
+    }
+    public function edittype(Request $request, $id){
 
-        ]);
-        $type =Typeeducation::find($request['$name']);
-        $type->name = $request['$name'];
+
+        $type =Typeeducation::find($id);
+        $type->name = $request['name'];
         $type->save();
-        return redirect('/alltypes');
+        return redirect('/educationType/allTypes');
     }
+    public function deletetype($id){
 
-    public function deletetype(Request $request){
-        $this->validate($request, [
 
-            'name' => 'required'
-
-        ]);
-        Typeeducation::find($request['name'])->delete();
-        return redirect('/alltypes');
+        $user = Typeeducation::find($id)->delete();
+        return back();
 
     }
 }

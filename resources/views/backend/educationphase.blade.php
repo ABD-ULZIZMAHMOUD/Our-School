@@ -31,7 +31,9 @@
 
                     
                               <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">حفظ </button>
-                                     <button type="submit" class="btn btn-inverse waves-effect waves-light">الغاء</button>
+                                  <a href="{{url('/studyType/allTypes')}}" class="btn btn-danger btn-rounded">
+                                      الغاء
+                                  </a>
 
 
                                   

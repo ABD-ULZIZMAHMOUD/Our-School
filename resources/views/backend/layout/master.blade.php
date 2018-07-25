@@ -235,9 +235,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li> <a href="">اضافه مرحلة تعليمية</a> </li>
                             <li> <a href="">مراحل التعليم </a> </li>
                             <li> <a href={{url("/studyphase")}}>اضافه نوع الدراسة</a> </li>
-                            <li> <a href={{url("educationType/allTypes")}}>انواع الدراسه </a> </li>
+                            <li> <a href={{url("studyType/allTypes")}}>انواع الدراسه </a> </li>
                             <li> <a href={{url("educationphase")}}>اضافه مرحله دراسيه </a> </li>
-                            <li> <a href="#">مراحل الدراسه</a> </li>
+                            <li> <a href="educationType/allTypes">مراحل الدراسه</a> </li>
                         </ul>
                     </li>
                     <li><a href="inbox.html" class="waves-effect"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Apps <span class="fa arrow"></span></span></a>
