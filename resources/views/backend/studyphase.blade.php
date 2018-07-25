@@ -18,7 +18,7 @@
 
 
                               @include('alerts')
-                              <form method="post" action="http://localhost/OurSchool/public/studyType/addType">
+                              <form method="post" action={{url("/studyType/addType")}}>
                                   {{csrf_field()}}
                                   <div class="form-group row">
                                     <label for="example-text-input" class="col-2 col-form-label">اسم المرحلة الدراسية</label>

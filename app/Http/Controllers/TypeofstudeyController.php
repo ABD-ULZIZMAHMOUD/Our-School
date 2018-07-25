@@ -33,34 +33,31 @@ class TypeofstudeyController extends Controller
 
 
         $allTypes = Typeofstudey::all();
-        return view ("backend.alltypes",compact('allTypes'));
+        return view ("backend.showstudy",compact('allTypes'));
 
 
     }
+    public function gettype($id){
 
-    public function edittype(Request $request){
+        $user = Typeofstudey::find($id);
+        return view ("backend.editstudy",compact('user'));
 
-        $this->validate($request, [
 
-            'name' => 'required'
+    }
+    public function edittype(Request $request, $id){
 
-        ]);
-        $type =Typeofstudey::find($request['$name']);
 
-        $type->name = $request['$name'];
+        $type =Typeofstudey::find($id);
+        $type->name = $request['name'];
         $type->save();
-        return redirect('/alltypes');
+        return redirect('/studyType/allTypes');
     }
 
-    public function deletetype(Request $request){
-        $this->validate($request, [
+    public function deletetype($id){
 
-            'name' => 'required'
 
-        ]);
-
-        Typeeducation::find($request['name'])->delete();
-        return redirect('/alltypes');
+        $user = Typeofstudey::find($id)->delete();
+        return back();
 
     }
 }

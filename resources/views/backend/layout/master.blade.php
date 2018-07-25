@@ -17,6 +17,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
     <!-- Bootstrap Core CSS -->
 
+
+
         <link href="{{asset('backend/plugins/bower_components/bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css')}}" rel="stylesheet" />
         <link href="{{asset('backend/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet" />
         <link href="{{asset('backend/eliteadmin/css/animate.css')}}" rel="stylesheet" />
@@ -57,6 +59,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             font-family: 'Sky';
         }
     </style>
+
+@yield('header')
 
 </head>
 
@@ -230,9 +234,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <ul class="nav nav-second-level">
                             <li> <a href="">اضافه مرحلة تعليمية</a> </li>
                             <li> <a href="">مراحل التعليم </a> </li>
-                            <li> <a href="http://localhost/OurSchool/public/studyphase">اضافه نوع الدراسة</a> </li>
-                            <li> <a href="#">انواع الدراسه </a> </li>
-                            <li> <a href="http://localhost/OurSchool/public/educationphase">اضافه مرحله دراسيه </a> </li>
+                            <li> <a href={{url("/studyphase")}}>اضافه نوع الدراسة</a> </li>
+                            <li> <a href={{url("educationType/allTypes")}}>انواع الدراسه </a> </li>
+                            <li> <a href={{url("educationphase")}}>اضافه مرحله دراسيه </a> </li>
                             <li> <a href="#">مراحل الدراسه</a> </li>
                         </ul>
                     </li>
@@ -475,7 +479,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
       <script src="{{asset('backend/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
-
+@yield('footer')
     
 </body>
 

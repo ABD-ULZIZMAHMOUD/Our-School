@@ -48,7 +48,6 @@ class TypeeducationController extends Controller
 
         ]);
         $type =Typeeducation::find($request['$name']);
-
         $type->name = $request['$name'];
         $type->save();
         return redirect('/alltypes');
@@ -60,7 +59,6 @@ class TypeeducationController extends Controller
             'name' => 'required'
 
         ]);
-
         Typeeducation::find($request['name'])->delete();
         return redirect('/alltypes');
 

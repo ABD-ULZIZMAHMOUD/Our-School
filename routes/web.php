@@ -41,12 +41,20 @@ Route::get('/addtypeto', function () {
 Route::prefix('studyType')->group(function() {
     Route::post('/addType', 'TypeofstudeyController@addtype');
     Route::get('/allTypes', 'TypeofstudeyController@getalltypes');
+    Route::get('/delete/{id}', 'TypeofstudeyController@deletetype');
+    Route::get('/edit/{id}', 'TypeofstudeyController@gettype');
+    Route::post('/editStudyType/{id}', 'TypeofstudeyController@edittype');
+
+
 
 });
 
 Route::prefix('educationType')->group(function() {
-    Route::post('/addType', 'TypeofstudeyController@addtype');
-    Route::get('/allTypes', 'TypeofstudeyController@getalltypes');
+    Route::post('/addType', 'TTypeeducationController@addtype');
+    Route::get('/allTypes', 'TypeeducationController@getalltypes');
+    Route::get('/delete/{id}', 'TypeeducationController@deletetype');
+    Route::get('/edit/{id}', 'TypeeducationController@gettype');
+    Route::post('/editStudyType/{id}', 'TypeeducationController@edittype');
 
 });
 
