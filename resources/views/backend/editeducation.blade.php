@@ -24,9 +24,7 @@
                                 <label for="example-text-input" class="col-2 col-form-label">اسم المرحلة الدراسية</label>
                                 <div class="col-10">
 
-                                    <input class="form-control" type="text" value={{$user->name}}  name="name" id="name" class="name">
-
-
+                                    <input class="form-control" type="text" value="{{$user->name}}"  name="name" id="name" class="name">
                                 </div>
                             </div>
 
