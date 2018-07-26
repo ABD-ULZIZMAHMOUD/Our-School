@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Typeeducation;
-use Illuminate\Support\Facades\Redirect;
 
 class TypeeducationController extends Controller
 {
@@ -43,7 +42,7 @@ class TypeeducationController extends Controller
     public function gettype($id){
 
         $user = Typeeducation::find($id);
-        return view ("backend.editeducation",compact('user'));
+        return view ("backend.editstudy",compact('user'));
 
 
     }

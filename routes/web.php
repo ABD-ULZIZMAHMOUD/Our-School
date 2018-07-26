@@ -28,6 +28,10 @@ Route::get('/study', function () {
     return view ('backend.addstudy');
 });
 
+Route::get('/year', function () {
+    return view ('backend.addyear');
+});
+
 Route::get('/login', function () {
     return view ('backend.login');
 });
@@ -38,6 +42,10 @@ Route::get('/add', function () {
 });
 Route::get('/addtypeto', function () {
     return view ('backend.addtype');
+});
+
+Route::get('/adddata', function () {
+    return view ('backend.adddataeducation');
 });
 
 Route::prefix('studyType')->group(function() {
@@ -71,6 +79,17 @@ Route::prefix('study')->group(function() {
 
 });
 
+Route::prefix('year')->group(function() {
+    Route::post('/addType', 'EducationyeaController@addtype');
+    Route::get('/allTypes', 'EducationyeaController@getalltypes');
+    Route::get('/delete/{id}', 'EducationyeaController@deletetype');
+    Route::get('/edit/{id}', 'EducationyeaController@gettype');
+    Route::post('/edityear/{id}', 'EducationyeaController@edittype');
+
+
+
+});
+
 Route::get('/addstudy', function () {
     return view ('backend.studyphase');
 });
@@ -78,6 +97,7 @@ Route::get('/addstudy', function () {
 Route::get('/addEtucationType', function () {
     return view ('backend.educationphase');
 });
+
 
 Route::post('/addAddress', 'AddressController@store');
 
