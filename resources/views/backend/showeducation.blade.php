@@ -42,7 +42,7 @@
                                             @foreach($allTypes as $type)
                                                 <tr>
                                                     <td>{{$type->name}}</td>
-                                                    <td>  <form action="{{url('educationType/delete/' . $type->typeofstudeyid)}}">
+                                                    <td>  <form action="{{url('educationType/delete/' .$type->typeeducationid)}}">
 
                                                             {{csrf_field()}}
                                                             <input type="hidden" value="DELETE">
@@ -52,7 +52,7 @@
                                                     </td>
                                                     <td>
 
-                                                        <a href="{{url('educationType/edit/' . $type->typeofstudeyid)}}" class="btn btn-danger btn-rounded">
+                                                        <a href="{{url('educationType/edit/' .$type->typeeducationid)}}" class="btn btn-danger btn-rounded">
                                                             تعديل
                                                         </a>
 

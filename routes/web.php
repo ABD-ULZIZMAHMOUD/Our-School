@@ -54,7 +54,7 @@ Route::prefix('educationType')->group(function() {
     Route::get('/allTypes', 'TypeeducationController@getalltypes');
     Route::get('/delete/{id}', 'TypeeducationController@deletetype');
     Route::get('/edit/{id}', 'TypeeducationController@gettype');
-    Route::post('/editStudyType/{id}', 'TypeeducationController@edittype');
+    Route::post('/editEducationType/{id}', 'TypeeducationController@edittype');
 
 });
 

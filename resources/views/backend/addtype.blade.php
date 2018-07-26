@@ -81,7 +81,7 @@
 
     <div class="content">
         @include('alerts')
-        <form method="post" action="http://localhost/OurSchool/public/addtype">
+        <form method="post" action={{url("addtype")}}>
             {{csrf_field()}}
 
 
