@@ -24,7 +24,9 @@ Route::get('/studyphase', function () {
     return view ('backend.studyphase');
 });
 
-
+Route::get('/study', function () {
+    return view ('backend.addstudy');
+});
 
 Route::get('/login', function () {
     return view ('backend.login');
@@ -55,6 +57,17 @@ Route::prefix('educationType')->group(function() {
     Route::get('/delete/{id}', 'TypeeducationController@deletetype');
     Route::get('/edit/{id}', 'TypeeducationController@gettype');
     Route::post('/editEducationType/{id}', 'TypeeducationController@edittype');
+
+});
+
+Route::prefix('study')->group(function() {
+    Route::post('/addType', 'StudyController@addtype');
+    Route::get('/allTypes', 'StudyController@getalltypes');
+    Route::get('/delete/{id}', 'StudyController@deletetype');
+    Route::get('/edit/{id}', 'StudyController@gettype');
+    Route::post('/editstudy/{id}', 'StudyController@edittype');
+
+
 
 });
 

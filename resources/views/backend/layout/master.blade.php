@@ -232,12 +232,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="linea-icon linea-basic fa-fw text-danger" data-icon="7"></i> <span class="hide-menu text-danger"> مراحل التعليم <span class="fa arrow"></span> </span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="">اضافه مرحلة تعليمية</a> </li>
-                            <li> <a href="">مراحل التعليم </a> </li>
+                            <li> <a href="#">اضافه مرحلة تعليمية</a> </li>
+                            <li> <a href="#">مراحل التعليم </a> </li>
                             <li> <a href={{url("/studyphase")}}>اضافه نوع الدراسة</a> </li>
                             <li> <a href={{url("studyType/allTypes")}}>انواع الدراسه </a> </li>
                             <li> <a href={{url("educationphase")}}>اضافه مرحله دراسيه </a> </li>
-                            <li> <a href="educationType/allTypes">مراحل الدراسه</a> </li>
+                            <li> <a href={{url("educationType/allTypes")}}>مراحل الدراسه</a> </li>
+                            <li> <a href={{url("study")}}>اضافه ماده دراسيه  </a> </li>
+                            <li> <a href={{url("study/allTypes")}}>المواد الدراسيه</a> </li>
                         </ul>
                     </li>
                     <li><a href="inbox.html" class="waves-effect"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Apps <span class="fa arrow"></span></span></a>

@@ -149,4 +149,5 @@ $(document).ready(function() {
     <!--Style Switcher -->
   
     <script src="{{asset('backend/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+
 @endsection
