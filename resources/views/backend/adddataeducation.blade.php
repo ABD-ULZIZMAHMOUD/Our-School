@@ -15,6 +15,7 @@
                 <div class="col-md-3">
                     <h5 class="m-t-30 m-b-10">Select box</h5>
                     <select class="selectpicker" data-style="form-control">
+
                         <option>Mustard</option>
                         <option>Ketchup</option>
                         <option>Relish</option>
