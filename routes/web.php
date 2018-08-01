@@ -100,6 +100,17 @@ Route::prefix('Education')->group(function() {
 
 });
 
+Route::prefix('book')->group(function() {
+    Route::get('/getAllBook', 'BookedController@getAllBook');
+    Route::post('/addType', 'BookedController@addBook');
+    Route::get('/allTypes', 'BookedController@getAll');
+    Route::get('/delete/{id}', 'BookedController@deleteBook');
+    Route::get('/edit/{id}', 'BookedController@getBook');
+    Route::post('/editEducation{id}', 'BookedController@editBook');
+
+
+});
+
 Route::get('/addstudy', function () {
     return view ('backend.EducationPhase.studyphase');
 });

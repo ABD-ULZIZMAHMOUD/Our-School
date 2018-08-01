@@ -319,7 +319,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                     </li>
 
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="linea-icon linea-basic fa-fw text-danger" data-icon="7"></i> <span class="hide-menu text-danger">الحوجزات الممتده <span class="fa arrow"></span> </span></a>
+                        <ul class="nav nav-second-level">
 
+                            <li> <a href={{url("book/getAllBook")}}>اضافه حجز ممتد  </a> </li>
+                            <li> <a href={{url("book/allTypes")}}>الحوجزات الممتده</a> </li>
+                        </ul>
+                    </li>
 
 
 

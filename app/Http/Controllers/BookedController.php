@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Booked;
+use App\Bookday;
+use App\Day;
+use App\Hour;
+use App\Teacher;
+use App\Student;
 
 class BookedController extends Controller
 {
@@ -10,10 +16,7 @@ class BookedController extends Controller
 
         $this->validate($request, [
 
-            'types' => 'required',
-            'typeStudy'=> 'required',
-            'years'=> 'required',
-            'study'=> 'required'
+
         ]);
         //type_education	typeof_studey	education_year	study
         $count =Education::where('type_education', $request->types)->where('typeof_studey',$request->typeStudy)
@@ -38,11 +41,10 @@ class BookedController extends Controller
 
 
 
-        $years = Educationyear::all();
-        $types=Typeeducation::all();
-        $typeStudy= Typeofstudey::all();
-        $study=Study::all();
-        return view ("backend.EducationPhase.adddataeducation",compact('types','typeStudy','years','study'));
+        $students = Student::all();
+        $teachers=Teacher::all();
+
+        return view ("backend.book.addbook",compact('students','teachers'));
 
 
     }

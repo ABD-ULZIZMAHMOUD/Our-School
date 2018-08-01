@@ -23,7 +23,7 @@
 
     <div id="login">
        
-        <form method="post" action="http://localhost/OurSchool/public/adminlogin">
+        <form method="post" action={{url("adminlogin")}}>
             {{csrf_field()}}
         <span class="fontawesome-user"></span>
             <center>

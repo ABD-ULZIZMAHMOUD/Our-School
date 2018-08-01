@@ -12,7 +12,7 @@ class AdminController extends Controller
      $admin= new Admin();
       $result=$admin->validuser($request["username"],$request['password']);
       if ($result['error']=="0"){
-          return view ("backend.dashboard");
+          return view ("backend.EducationPhase.dashboard");
       }
       else if ($result['error']=="1"){
           return Redirect::back()->with('Notfound'," المستخدم غير موجود ");
