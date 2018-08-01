@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="title">عرض المواد الدراسيه</div>
+                        <div class="title">عرض   الطلاب</div>
                     </div>
                     <div class="card-body">
 
@@ -32,7 +32,9 @@
                                         <table id="myTable" class="table table-striped">
                                             <thead>
                                             <tr>
-                                                <th>الماده الدراسية</th>
+                                                <th>  الاسم </th>
+                                               
+                                                
                                                 <th> الحدث</th>
 
                                             </tr>
@@ -42,17 +44,20 @@
                                             @foreach($allTypes as $type)
                                                 <tr>
                                                     <td>{{$type->name}}</td>
-                                                    <td>  <form action="{{url('study/delete/'.$type->studyid)}}">
+                                                    
+                                                   
+                                                   
+                                                    <td>  <form action="{{url('term/delete/'.$type->id)}}">
 
                                                             {{csrf_field()}}
                                                             <input type="hidden" value="DELETE">
 
                                                             <input type="submit" class="btn btn-danger btn-rounded" value="حذف" />
-                                                        </form>
+                                                        </form>.
                                                     </td>
                                                     <td>
 
-                                                        <a href="{{url('study/edit/'.$type->studyid)}}" class="btn btn-danger btn-rounded">
+                                                        <a href="{{url('term/edit/'.$type->id)}}" class="btn btn-danger btn-rounded">
                                                             تعديل
                                                         </a>
 

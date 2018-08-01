@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="title">عرض السنوات الدراسية</div>
+                        <div class="title">عرض  الحجزات</div>
                     </div>
                     <div class="card-body">
 
@@ -32,7 +32,20 @@
                                         <table id="myTable" class="table table-striped">
                                             <thead>
                                             <tr>
-                                                <th>السنه الدراسية</th>
+                                                <th> تاريخ الحجز</th>
+                                                <th>  وقت البدأ</th>
+                                                <th>   وقت الانتهاء</th>
+                                                <th>    عدد الساعات</th>
+                                                <th>    تقييم المدرس</th>
+                                                <th>    تقييم الطالب</th>
+                                                <th>    المبلغ الكلى</th>
+                                                <th>    حضور المدرس</th>
+                                                <th>    مغادرة المدرس</th>
+                                                <th>    حضور الطالب</th>
+                                                <th>   مغادرة الطالب </th>
+                                                <th>    حاله الدفع</th>
+                                             
+
                                                 <th> الحدث</th>
 
                                             </tr>
@@ -41,18 +54,31 @@
 
                                             @foreach($allTypes as $type)
                                                 <tr>
-                                                    <td>{{$type->year}}</td>
-                                                    <td>  <form action="{{url('year/delete/' . $type->educationid)}}">
+                                                    <td>{{$type->slotdate}}</td>
+                                                    <td>{{$type->slottimestart}}</td>
+                                                    <td>{{$type->slottimeebd}}</td>
+                                                    <td>{{$type->duration}}</td>
+                                                    <td>{{$type->taevaluation}}</td>
+                                                    <td>{{$type->studevaluation}}</td>
+                                                    <td>{{$type->price}}</td>
+                                                 <td>{{$type->taactvitedstart}}</td>
+                                                   
+                                                    <td>{{$type->taactivatedend}}</td>
+                                                    <td>{{$type->studactivatedstatr}}</td>
+                                                    <td>{{$type->studactivededend}}</td>
+                                                    <td>{{$type->ispaid}}</td>
+                                                    
+                                                    <td>  <form action="{{url('slot/delete/'.$type->slotid)}}">
 
                                                             {{csrf_field()}}
                                                             <input type="hidden" value="DELETE">
 
                                                             <input type="submit" class="btn btn-danger btn-rounded" value="حذف" />
-                                                        </form>
+                                                        </form>.
                                                     </td>
                                                     <td>
 
-                                                        <a href="{{url('year/edit/' . $type->educationid)}}" class="btn btn-danger btn-rounded">
+                                                        <a href="{{url('slot/edit/'.$type->slotid)}}" class="btn btn-danger btn-rounded">
                                                             تعديل
                                                         </a>
 
@@ -149,5 +175,4 @@
             <!--Style Switcher -->
 
             <script src="{{asset('backend/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
-    </div>
 @endsection

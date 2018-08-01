@@ -18,7 +18,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Bootstrap Core CSS -->
 
 
-
         <link href="{{asset('backend/plugins/bower_components/bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css')}}" rel="stylesheet" />
         <link href="{{asset('backend/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet" />
         <link href="{{asset('backend/eliteadmin/css/animate.css')}}" rel="stylesheet" />
@@ -27,6 +26,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               <link href="{{asset('backend/eliteadmin/css/colors/blue.cs')}}" rel="stylesheet" />
 
+    <link href={{asset('backend/drop_down_search.css')}}/>
+    <link href="{{asset('backend/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css" />
+
+    <link href="{{asset('backend/plugins/bower_components/custom-select/custom-select.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('backend/plugins/bower_components/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/bower_components/multiselect/css/multi-select.css')}}" rel="stylesheet" />
+    <link href="{{asset('backend/plugins/bower_components/switchery/dist/switchery.min.css')}}" rel="stylesheet" />
 
         
    
@@ -232,16 +240,89 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="linea-icon linea-basic fa-fw text-danger" data-icon="7"></i> <span class="hide-menu text-danger"> مراحل التعليم <span class="fa arrow"></span> </span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href={{url("/year")}}>اضافه مرحلة تعليمية</a> </li>
-                            <li> <a href={{url("year/allTypes")}}>مراحل التعليم </a> </li>
+                            <li> <a href={{url("/educationphase")}}>اضافه مرحلة تعليمية</a> </li>
+                            <li> <a href={{url("educationType/allTypes")}}>مراحل التعليم </a> </li>
                             <li> <a href={{url("/studyphase")}}>اضافه نوع الدراسة</a> </li>
                             <li> <a href={{url("studyType/allTypes")}}>انواع الدراسه </a> </li>
-                            <li> <a href={{url("educationphase")}}>اضافه مرحله دراسيه </a> </li>
-                            <li> <a href={{url("educationType/allTypes")}}>مراحل الدراسه</a> </li>
+                            <li> <a href={{url("/year")}}>اضافه مرحله دراسيه </a> </li>
+                            <li> <a href={{url("year/allTypes")}}>مراحل الدراسه</a> </li>
                             <li> <a href={{url("study")}}>اضافه ماده دراسيه  </a> </li>
                             <li> <a href={{url("study/allTypes")}}>المواد الدراسيه</a> </li>
+                            <li> <a href={{url("Education/getAllEducation")}}>اضافه ماده دراسيه لمرحله تعليم  </a> </li>
+                            <li> <a href={{url("Education/allTypes")}}> المواد الدراسيه لمراحل التعليم</a> </li>
                         </ul>
                     </li>
+
+
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="linea-icon linea-basic fa-fw text-danger" data-icon="7"></i> <span class="hide-menu text-danger">  الجامعات <span class="fa arrow"></span> </span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href={{url("/university")}}>  أضافه جامعة</a> </li>
+                            <li> <a href={{url("/university/allTypes")}}>  الجامعات</a> </li>
+                            <li> <a href={{url("/faculty")}}> أضافه كلية  </a> </li>
+                            <li> <a href={{url("/faculty/allTypes")}}> الكليات  </a> </li>
+                            <li> <a href={{url("/term")}}>   اضافه فصل دراسى</a> </li>
+                            <li> <a href={{url("/term/allTypes")}}>    عرض الفصول الدراسية</a> </li>
+                            <li> <a href={{url("/subject")}}>اضافه ماده جامعية </a> </li>
+                            <li> <a href={{url("/subject/allTypes")}}>عرض المواد الجامعية</a> </li>
+
+                        </ul>
+                    </li>
+
+
+
+
+
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="linea-icon linea-basic fa-fw text-danger" data-icon="7"></i> <span class="hide-menu text-danger">  الطلاب <span class="fa arrow"></span> </span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href={{url("/student")}}>  أضافه طالب</a> </li>
+
+                            <li> <a href={{url("/student/allTypes")}}>   عرض الطلاب</a> </li>
+
+
+
+
+
+                        </ul>
+                    </li>
+
+
+
+
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="linea-icon linea-basic fa-fw text-danger" data-icon="7"></i> <span class="hide-menu text-danger">  الحجزات <span class="fa arrow"></span> </span></a>
+                        <ul class="nav nav-second-level">
+
+                            <li> <a href={{url("/slot")}}>   اضافه حجز </a> </li>
+                            <li> <a href={{url("/slot/allTypes")}}>   عرض الحجزات </a> </li>
+
+
+
+
+                        </ul>
+                    </li>
+
+
+
+
+
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="linea-icon linea-basic fa-fw text-danger" data-icon="7"></i> <span class="hide-menu text-danger">  المدرسين <span class="fa arrow"></span> </span></a>
+                        <ul class="nav nav-second-level">
+
+
+
+                            <li> <a href={{url("/teacher")}}>  أضافه مدرس</a> </li>
+
+                            <li> <a href={{url("/teacher/allTypes")}}>   عرض المدرسين</a> </li>
+
+
+
+
+                        </ul>
+                    </li>
+
+
+
+
+
                     <li><a href="inbox.html" class="waves-effect"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Apps <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="chat.html">Chat-message</a></li>
@@ -438,7 +519,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                      
                    @yield('content')
                    </div>
-                   
+
+
+
+            </div>
+        </div>
+    </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
 
@@ -481,6 +567,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
       <script src="{{asset('backend/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+
+
+
 @yield('footer')
     
 </body>

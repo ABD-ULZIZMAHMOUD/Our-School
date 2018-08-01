@@ -1,12 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Study;
+use App\Subject;
 use Illuminate\Support\Facades\Redirect;
 
-class StudyController extends Controller
+class SubjectController extends Controller
 {
     public function addtype(Request $request){
 
@@ -15,17 +14,17 @@ class StudyController extends Controller
             'name' => 'required'
 
         ]);
-        $count =Study::where('name', $request->name)->count();
+        $count =Subject::where('name', $request->name)->count();
 
         if ($count!=0){
             return Redirect::back()->with('WrongPassword',"تلك الماده الدراسيه موجوده من قبل  ");
 
         }
-        $type= new Study();
+        $type= new Subject();
         $type->name=$request['name'];
         $type->save();
 
-        return redirect('/study/allTypes');
+        return redirect('/subject/allTypes');
 
 
     }
@@ -33,31 +32,31 @@ class StudyController extends Controller
 
 
 
-        $allTypes = Study::all();
-        return view ("backend.EducationPhase.showstudie",compact('allTypes'));
+        $allTypes = Subject::all();
+        return view ("backend.university.showsubject",compact('allTypes'));
 
 
     }
     public function gettype($id){
 
-        $user = Study::find($id);
-        return view ("backend.EducationPhase.editstudie",compact('user'));
+        $user = Subject::find($id);
+        return view ("backend.university.editsubject",compact('user'));
 
 
     }
     public function edittype(Request $request, $id){
 
 
-        $type =Study::find($id);
+        $type =Subject::find($id);
         $type->name = $request['name'];
         $type->save();
-        return redirect('/study/allTypes');
+        return redirect('/subject/allTypes');
     }
 
     public function deletetype($id){
 
 
-        $user = Study::find($id)->delete();
+        $user = Subject::find($id)->delete();
         return back();
 
     }

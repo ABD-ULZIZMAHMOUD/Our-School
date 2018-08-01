@@ -33,14 +33,14 @@ class TypeofstudeyController extends Controller
 
 
         $allTypes = Typeofstudey::all();
-        return view ("backend.showstudy",compact('allTypes'));
+        return view ("backend.EducationPhase.showstudy",compact('allTypes'));
 
 
     }
     public function gettype($id){
 
         $user = Typeofstudey::find($id);
-        return view ("backend.editstudy",compact('user'));
+        return view ("backend.EducationPhase.editstudy",compact('user'));
 
 
     }

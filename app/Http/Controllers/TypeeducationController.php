@@ -35,14 +35,14 @@ class TypeeducationController extends Controller
 
 
         $allTypes = Typeeducation::all();
-        return view ("backend.showeducation",compact('allTypes'));
+        return view ("backend.EducationPhase.showeducation",compact('allTypes'));
 
 
     }
     public function gettype($id){
 
         $user = Typeeducation::find($id);
-        return view ("backend.editstudy",compact('user'));
+        return view ("backend.EducationPhase.editstudy",compact('user'));
 
 
     }

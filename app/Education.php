@@ -10,15 +10,5 @@ class Education extends Model
   public $primaryKey='educationid';
   public $timestamps=false;
 
-	//year	type
-    public function addAddress( $typeofstudy,$year,$typeofeducation ){
 
-
-        $education= new Education();
-
-
-        $json = array("status"=>"success");
-        return $json;
-
-    }
 }

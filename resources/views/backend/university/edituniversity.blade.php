@@ -11,17 +11,17 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="title">اضافه مراحل الدراسية</div>
+                        <div class="title">تحديث</div>
                     </div>
                     <div class="card-body">
 
 
                         @include('alerts')
-                        <form method="post" action="{{url('studyType/editStudyType/'.$user->typeofstudeyid)}}">
+                        <form method="post" action="{{url('university/edituniversity/'.$user->id)}}">
                             {{csrf_field()}}
                             <input type="hidden" value="PUT">
                             <div class="form-group row">
-                                <label for="example-text-input" class="col-2 col-form-label">اسم المرحلة الدراسية</label>
+                                <label for="example-text-input" class="col-2 col-form-label">  اسم الكلية</label>
                                 <div class="col-10">
 
                                     <input class="form-control" type="text" value="{{$user->name}}"  name="name" id="name" class="name">

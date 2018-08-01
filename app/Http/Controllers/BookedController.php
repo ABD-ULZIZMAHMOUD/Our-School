@@ -2,20 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Educationyear;
-use App\Study;
-use App\Typeeducation;
-use App\Typeofstudey;
 use Illuminate\Http\Request;
-use App\Education;
-use Illuminate\Support\Facades\Redirect;
 
-
-
-class EducationController extends Controller
+class BookedController extends Controller
 {
-
-    public function addEducation(Request $request){
+    public function addBook(Request $request){
 
         $this->validate($request, [
 
@@ -43,7 +34,7 @@ class EducationController extends Controller
 
 
     }
-    public function  getAllEducation(){
+    public function  getAllBook(){
 
 
 
@@ -65,7 +56,7 @@ class EducationController extends Controller
 
 
     }
-    public function gettype($id){
+    public function getBook($id){
 
         $years = Educationyear::all();
         $types=Typeeducation::all();
@@ -74,12 +65,12 @@ class EducationController extends Controller
 
 
         $user = Education::find($id);
-       // print_r($user);
+        // print_r($user);
         return view ("backend.EducationPhase.editEducations",compact('user','types','typeStudy','years','study'));
 
 
     }
-    public function edittype(Request $request, $id){
+    public function editBook(Request $request, $id){
 
 
 
@@ -91,13 +82,13 @@ class EducationController extends Controller
             'study'=> 'required'
         ]);
 
-      /*  $count =Education::where('type_education', $request->types)->where('typeof_studey',$request->typeStudy)
-            ->where('education_year',$request->years)->where('study',$request->study)->count();
+        /*  $count =Education::where('type_education', $request->types)->where('typeof_studey',$request->typeStudy)
+              ->where('education_year',$request->years)->where('study',$request->study)->count();
 
-        if ($count!=0){
-            return Redirect::back()->with('WrongPassword',"هذه المرحله بالماده موجوده من قبل  ");
+          if ($count!=0){
+              return Redirect::back()->with('WrongPassword',"هذه المرحله بالماده موجوده من قبل  ");
 
-        }*/
+          }*/
         $type =Education::find($id);
         $type->type_education= $request->types;
         $type->typeof_studey=$request->typeStudy;
@@ -107,12 +98,11 @@ class EducationController extends Controller
 
         return redirect('/Education/allTypes');
     }
-    public function deletetype($id){
+    public function deleteBook($id){
 
 
         $user = Education::find($id)->delete();
         return back();
 
     }
-
 }

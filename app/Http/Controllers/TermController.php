@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Educationyear;
+use App\Term;
 use Illuminate\Support\Facades\Redirect;
 
-class EducationyeaController extends Controller
+class TermController extends Controller
 {
     public function addtype(Request $request){
 
@@ -15,17 +15,17 @@ class EducationyeaController extends Controller
             'name' => 'required'
 
         ]);
-        $count =Educationyear::where('year', $request->name)->count();
+        $count =Term::where('name', $request->name)->count();
 
         if ($count!=0){
             return Redirect::back()->with('WrongPassword',"هذه السنه الدراسيه  موجود من قبل الرجاء ادخال نوع اخر ");
 
         }
-        $type= new Educationyear();
-        $type->year=$request['name'];
+        $type= new Term();
+        $type->name=$request['name'];
         $type->save();
 
-        return redirect('/year/allTypes');
+        return redirect('/term/allTypes');
 
 
     }
@@ -33,30 +33,30 @@ class EducationyeaController extends Controller
 
 
 
-        $allTypes = Educationyear::all();
-        return view ("backend.EducationPhase.showyear",compact('allTypes'));
+        $allTypes = Term::all();
+        return view ("backend.term.showterm",compact('allTypes'));
 
 
     }
     public function gettype($id){
 
-        $user = Educationyear::find($id);
-        return view ("backend.EducationPhase.edityear",compact('user'));
+        $user = Term::find($id);
+        return view ("backend.term.editterm",compact('user'));
 
 
     }
     public function edittype(Request $request, $id){
 
 
-        $type =Educationyear::find($id);
-        $type->year = $request['name'];
+        $type =Term::find($id);
+        $type->name = $request['name'];
         $type->save();
-        return redirect('/year/allTypes');
+        return redirect('/term/allTypes');
     }
     public function deletetype($id){
 
 
-        $user = Educationyear::find($id)->delete();
+        $user = Term::find($id)->delete();
         return back();
 
     }
