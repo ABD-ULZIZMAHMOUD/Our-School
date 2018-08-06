@@ -102,6 +102,7 @@ Route::prefix('Education')->group(function() {
 
 Route::prefix('book')->group(function() {
     Route::get('/getAllBook', 'BookedController@getAllBook');
+    Route::get('/getStudent', 'BookedController@getStudent');
     Route::post('/addType', 'BookedController@addBook');
     Route::get('/allTypes', 'BookedController@getAll');
     Route::get('/delete/{id}', 'BookedController@deleteBook');

@@ -58,6 +58,10 @@ class BookedController extends Controller
 
 
     }
+    public function getStudent(){
+return "zizo";
+
+    }
     public function getBook($id){
 
         $years = Educationyear::all();

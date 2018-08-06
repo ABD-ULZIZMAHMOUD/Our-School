@@ -6,58 +6,31 @@
 @section('content')
 
 
+
+    <div id="p1">Hello World!</div>
+
+    <select name="sweets" multiple="multiple" id="sel">
+        <option>Chocolate</option>
+        <option selected="selected">Candy</option>
+        <option>Taffy</option>
+        <option selected="selected">Caramel</option>
+        <option>Fudge</option>
+        <option>Cookie</option>
+    </select>
+    <div id="zizo"></div>
+
+
+
+
     @include('alerts')
+
     <form method="post" action={{url("/book/addType")}}>
         {{csrf_field()}}
 
+
         <div class="card-body">
-            <div class="row">
 
 
-
-
-
-                <div class="col-sm-6">
-                    <div class="white-box">
-                        <h3 class="box-title m-b-0">الطلاب </h3>
-
-                        <select class="form-control select2" required name='student' >
-
-
-                            @foreach($students as $student)
-                                <option value={{$student->studentid}} >{{$student->frisrtname.$student->lastname}}</option>
-
-                            @endforeach
-
-
-
-                        </select>
-
-                    </div>
-                </div>
-                <div class="col-sm-6">
-
-                    <div class="white-box">
-                        <h3 class="box-title m-b-0">المدرسين</h3>
-
-                        <select class="form-control select2" name='typeStudy' required>
-
-
-                            @foreach($teachers as $teacher)
-                                <option  value={{$teacher->teacherid}}>{{$teacher->fristname." ".$teacher->lastname}}</option>
-
-                            @endforeach
-
-
-
-                        </select>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="card-body">
             <div class="row">
                 <div class="col-sm-6">
 
@@ -88,6 +61,71 @@
         <div class="card-body">
             <div class="row">
 
+
+
+
+                <div class="col-sm-4">
+                    <div class="white-box">
+                        <h3 class="box-title m-b-0">الطلاب </h3>
+
+                        <select class="form-control select2" required name='student' id="studentselected" >
+
+
+                            @foreach($students as $student)
+                                <option value={{$student->studentid}} >{{$student->frisrtname.$student->lastname}}</option>
+
+                            @endforeach
+
+
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                    <div class="white-box">
+                        <h3 class="box-title m-b-0">المواد الداسيه</h3>
+
+                        <select class="form-control select2" name='typeStudy' required>
+
+
+                            @foreach($teachers as $teacher)
+                                <option  value={{$teacher->teacherid}}>{{$teacher->fristname." ".$teacher->lastname}}</option>
+
+                            @endforeach
+
+
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                    <div class="white-box">
+                        <h3 class="box-title m-b-0">المدرسين</h3>
+
+                        <select class="form-control select2" name='typeStudy' required>
+
+
+                            @foreach($teachers as $teacher)
+                                <option  value={{$teacher->teacherid}}>{{$teacher->fristname." ".$teacher->lastname}}</option>
+
+                            @endforeach
+
+
+
+                        </select>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+
                 <div class="col-sm-4">
                     <div class="white-box">
                         <h3 class="box-title m-b-0">الايام </h3>
@@ -96,13 +134,13 @@
 
 
 
-                                <option value="السبت" >السبت </option>
-                                <option value="الاحد" >الاحد </option>
-                                <option value="الاثنين" >الاثنين </option>
-                                <option value="الثلاثاء" >الثلاثاء </option>
-                                <option value="الاربعاء" >الاربعاء </option>
-                                <option value="الخميس" >الخميس </option>
-                                <option value="الجمعه" >الجمعه </option>
+                            <option value="السبت" >السبت </option>
+                            <option value="الاحد" >الاحد </option>
+                            <option value="الاثنين" >الاثنين </option>
+                            <option value="الثلاثاء" >الثلاثاء </option>
+                            <option value="الاربعاء" >الاربعاء </option>
+                            <option value="الخميس" >الخميس </option>
+                            <option value="الجمعه" >الجمعه </option>
 
 
 
@@ -129,10 +167,9 @@
                     </div>
                 </div>
 
-                </div>
-
             </div>
 
+        </div>
         <div class="card-body">
             <div class="row">
                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">حفظ </button>
@@ -148,6 +185,19 @@
     </form>
 
 
-@endsection
+    <script>
+        document.getElementById("p1").innerHTML = "New text!";
+    </script>
 
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+
+        $( "#studentselected" )
+            .change(function () {
+                alert(this.value)
+
+            })
+            .change();
+    </script>
+@endsection
 
