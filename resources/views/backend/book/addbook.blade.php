@@ -5,23 +5,6 @@
 
 @section('content')
 
-
-
-    <div id="p1">Hello World!</div>
-
-    <select name="sweets" multiple="multiple" id="sel">
-        <option>Chocolate</option>
-        <option selected="selected">Candy</option>
-        <option>Taffy</option>
-        <option selected="selected">Caramel</option>
-        <option>Fudge</option>
-        <option>Cookie</option>
-    </select>
-    <div id="zizo"></div>
-
-
-
-
     @include('alerts')
 
     <form method="post" action={{url("/book/addType")}}>
@@ -70,7 +53,7 @@
 
                         <select class="form-control select2" required name='student' id="studentselected" >
 
-
+                            <option value=""> اختار الطالب</option>
                             @foreach($students as $student)
                                 <option value={{$student->studentid}} >{{$student->frisrtname.$student->lastname}}</option>
 
@@ -87,16 +70,7 @@
                     <div class="white-box">
                         <h3 class="box-title m-b-0">المواد الداسيه</h3>
 
-                        <select class="form-control select2" name='typeStudy' required>
-
-
-                            @foreach($teachers as $teacher)
-                                <option  value={{$teacher->teacherid}}>{{$teacher->fristname." ".$teacher->lastname}}</option>
-
-                            @endforeach
-
-
-
+                        <select class="form-control select2" name='typeStudy' required id="selectTeacher">
                         </select>
 
                     </div>
@@ -151,19 +125,32 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="form-group row">
-                        <label for="example-time-input" class="col-2 col-form-label">من</label>
-                        <div class="col-10">
-                            <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-                        </div>
+
+                    <div class="white-box">
+                        <h3 class="box-title m-b-0">عدد ساعات الدرس</h3>
+
+                        <select class="form-control select2" name='typeStudy' required id="selectTeacher">
+                        </select>
+
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="form-group row">
-                        <label for="example-time-input" class="col-2 col-form-label">الي</label>
-                        <div class="col-10">
-                            <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-                        </div>
+
+                    <div class="white-box">
+                        <h3 class="box-title m-b-0">المواعيد المتاحه</h3>
+
+                        <select class="form-control select2" name='typeStudy' required>
+
+
+                            @foreach($teachers as $teacher)
+                                <option  value={{$teacher->teacherid}}>{{$teacher->fristname." ".$teacher->lastname}}</option>
+
+                            @endforeach
+
+
+
+                        </select>
+
                     </div>
                 </div>
 
@@ -185,17 +172,40 @@
     </form>
 
 
-    <script>
-        document.getElementById("p1").innerHTML = "New text!";
-    </script>
+
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
 
-        $( "#studentselected" )
-            .change(function () {
-                alert(this.value)
+        $( "#studentselected").change(function () {
 
+                var id = document.getElementById("selectTeacher").value;
+               //alert(this.value )
+               //alert(id )
+            if(this.value == ""){
+
+            }else {
+                $.ajax({
+                    type: 'GET',
+                    url: '{{url("/book/getStudent")}}',
+                    data: this.value,
+                    success: function (data) {
+                        $('#selectTeacher').children().remove();
+                        $.each(data, function (key, value) {
+                            $('#selectTeacher').append($("<option/>", {
+                                value: value.teacherid,
+                                text: value.fristname + ' ' + value.lastname
+                            }));
+                        });
+
+                        //console.log(data);
+
+                    },
+                    error: function (data) {
+                        alert("error");
+                    }
+                });
+            }
             })
             .change();
     </script>

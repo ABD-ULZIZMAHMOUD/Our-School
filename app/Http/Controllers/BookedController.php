@@ -59,7 +59,8 @@ class BookedController extends Controller
 
     }
     public function getStudent(){
-return "zizo";
+        //return Teacher::all();
+        return response()->json(Teacher::all());
 
     }
     public function getBook($id){

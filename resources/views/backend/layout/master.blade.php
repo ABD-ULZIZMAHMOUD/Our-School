@@ -575,7 +575,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <script src="{{asset('backend/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
 
 
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 @yield('footer')
     
 </body>
