@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Taeducation extends Model
+class Parents extends Model
 {
-    protected $table='taeducation';
-    public $primaryKey='id';
+    protected $table='parent';
+    public $primaryKey='parentid';
     public $timestamps=false;
 }

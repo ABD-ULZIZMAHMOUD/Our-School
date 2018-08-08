@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="title">عرض   المدرسين</div>
+                        <div class="title">عرض  السنين الجامعية</div>
                     </div>
                     <div class="card-body">
 
@@ -32,25 +32,7 @@
                                         <table id="myTable" class="table table-striped">
                                             <thead>
                                             <tr>
-                                                <th>  الاسم الاول</th>
-                                                <th>  الاسم الاخير</th>
-                                                <th>   رقم التليفون</th>
-                                                <th>   النوع</th>
-                                                <th>   الفئة</th>
-                                                <th>    الدولة</th>
-                                                <th>    المحافظة</th>
-                                                <th>    الحى</th>
-                                                
-                                                <th>    الشارع</th>
-                                                <th>    رقم المنزل</th>
-                                                <th>    رقم الشقة</th>
-                                              
-                                                <th>    تكلفة/ ساعة</th>
-                                               
-                                                <th>    اسم المستخدم</th>
-                                                <th>    الايميل</th>
-                                               
-                                                
+                                                <th> اسم السنه الجامعية</th>
                                                 <th> الحدث</th>
 
                                             </tr>
@@ -59,24 +41,8 @@
 
                                             @foreach($allTypes as $type)
                                                 <tr>
-                                                    <td>{{$type->fristname}}</td>
-                                                    <td>{{$type->lastname}}</td>
-                                                    <td>{{$type->phonenum}}</td>
-                                                    <td>{{$type->gender}}</td>
-                                                    <td>{{$type->group}}</td>
-                                                    <td>{{$type->country}}</td>
-                                                    <td>{{$type->gov}}</td>
-                                                    <td>{{$type->district}}</td>
-                                                    <td>{{$type->street}}</td>
-                                                    <td>{{$type->houseno}}</td>
-                                                    <td>{{$type->flatno}}</td>
-                                                    <td>{{$type->priceofhour}}</td>
-                                                    
-                                                    <td>{{$type->username}}</td>
-                                                    <td>{{$type->email}}</td>
-                                                   
-                                                   
-                                                    <td>  <form action="{{url('teacher/delete/'.$type->teacherid)}}">
+                                                    <td>{{$type->name}}</td>
+                                                    <td>  <form action="{{url('yearuniversity/delete/'.$type->id)}}">
 
                                                             {{csrf_field()}}
                                                             <input type="hidden" value="DELETE">
@@ -86,7 +52,7 @@
                                                     </td>
                                                     <td>
 
-                                                        <a href="{{url('teacher/edit/'.$type->teacherid)}}" class="btn btn-danger btn-rounded">
+                                                        <a href="{{url('yearuniversity/edit/'.$type->id)}}" class="btn btn-danger btn-rounded">
                                                             تعديل
                                                         </a>
 

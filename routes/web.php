@@ -1,7 +1,7 @@
 <?php
 
 
-
+//zizo work
 Route::get('/', function () {
     return view('welcome');
 });
@@ -44,6 +44,9 @@ Route::get('/addtypeto', function () {
     return view ('backend.EducationPhase.addtype');
 });
 
+Route::get('/parent', function () {
+    return view ('backend.parent.addparent');
+});
 
 Route::get('/addbook', 'BookedController@getAllBooked');
 
@@ -112,6 +115,17 @@ Route::prefix('book')->group(function() {
 
 });
 
+Route::prefix('parent')->group(function() {
+    Route::post('/addType', 'ParentController@addtype');
+    Route::get('/allTypes', 'ParentController@getalltypes');
+    Route::get('/delete/{id}', 'ParentController@deletetype');
+    Route::get('/edit/{id}', 'ParentController@gettype');
+    Route::post('/editparent/{id}', 'ParentController@edittype');
+
+
+
+});
+
 Route::get('/addstudy', function () {
     return view ('backend.EducationPhase.studyphase');
 });
@@ -127,7 +141,7 @@ Route::get('/adddata', 'EducationController@getAllEducation');
 Route::post('/adminlogin', 'AdminController@validAdmin');
 
 
-
+//  zizo end
 /*  Ahmed work */
 Route::get('/subject', function () {
     return view ('backend.university.addsubject');
@@ -228,6 +242,7 @@ Route::prefix('student')->group(function() {
 
 
 });
+
 
 
 Route::prefix('subject')->group(function() {

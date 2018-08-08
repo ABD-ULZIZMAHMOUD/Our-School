@@ -4,6 +4,19 @@
 @extends('backend.layout.master')
 
 @section('content')
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script  >
+ $(function () {
+    $('.group').hide();
+    $('#مدرسى').show();
+    $('#selectMe').change(function () {
+      $('.group').hide();
+      $('#'+$(this).val()).show();
+    });
+ });
+
+</script>
 
 
     <div class="content">
@@ -45,6 +58,138 @@
 
 
                                 </div>
+
+
+
+                     <label for="gender" class="col-1 col-form-label">    النوع</label>
+
+                        <select class="form-control select2" required name='gender' >
+
+
+                          
+                                <option value="ذكر" @if($user->gender=="ذكر") selected @endif>ذكر</option>
+                                <option value="أنثى" @if($user->gender=="أنثى") selected @endif>أنثى</option>
+
+                        </select>
+
+                        
+                     <label for="group" class="col-1 col-form-label">    الفئة</label>
+
+<select class="form-control select2"   id="selectMe" required name='group' >
+
+
+  
+        <option value="مدرسى" @if($user->group=="مدرسى") selected @endif>مدرسى</option>
+        <option value="جامعى" @if($user->group=="جامعى") selected @endif>جامعى</option>
+
+</select>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+<div id="مدرسى" class="group">
+<form method="post" action={{url("/Education/addType")}}>
+        {{csrf_field()}}
+
+        <div class="card-body">
+    <div class="row">
+
+
+
+
+
+                <div class="col-sm-3">
+                    <div class="white-box">
+                        <p class="box-title m-b-0">مرحله التعليم </p>
+
+                        <select class="form-control select2" required name='types' >
+
+
+                            @foreach($types as $type)
+                                <option value={{$type->typeeducationid}} >{{$type->name}}</option>
+
+                            @endforeach
+
+
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-sm-3">
+
+                    <div class="white-box">
+                        <p class="box-title m-b-0">نوع التعليم</p>
+
+                        <select class="form-control select2" name='typeStudy' required>
+
+
+                            @foreach($typeStudy as $type)
+                                <option  value={{$type->typeofstudeyid}}>{{$type->name}}</option>
+
+                            @endforeach
+
+
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="white-box">
+                        <p class="box-title m-b-0">السنه الدراسيه</p>
+
+
+
+                        <select class="form-control select2" name='years' required>
+
+
+                            @if(count($years) > 0)
+                                @foreach($years as $type)
+                                    <option  value={{$type->educationid}}>{{$type->year}}</option>
+
+                                @endforeach
+                            @else
+                                <option value="">لا يوجد نتائج</option>
+                            @endif
+
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="white-box">
+                        <p class="box-title m-b-0">الماده الدراسيه</p>
+
+                        <select class="form-control select2" name='study' required>
+
+
+                            @foreach($study as $type)
+                                <option  value={{$type->studyid}}>{{$type->name}}</option>
+
+                            @endforeach
+
+
+
+
+                        </select>
+
+                    </div>
+                </div>
+
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+
                                 <label for="country" class="col-2 col-form-label">    الدولة</label>
                                 <div class="col-10">
 

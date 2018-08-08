@@ -129,7 +129,9 @@
                     <div class="white-box">
                         <h3 class="box-title m-b-0">عدد ساعات الدرس</h3>
 
-                        <select class="form-control select2" name='typeStudy' required id="selectTeacher">
+                        <select class="form-control select2" name='numhour' required id="numhour">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
                         </select>
 
                     </div>
@@ -160,7 +162,7 @@
         <div class="card-body">
             <div class="row">
                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">حفظ </button>
-                <a href="{{url('/Education/allTypes')}}" class="btn btn-danger btn-rounded">
+                <a href="{{url('/book/allTypes')}}" class="btn btn-danger btn-rounded">
                     الغاء
                 </a>
 

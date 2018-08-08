@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Day extends Model
 {
-    protected $table = 'day';
-    public $primaryKey = 'dayid';
-    public $timestamps = false;
+    protected $table='day';
+    public $primaryKey='id';
+    public $timestamps=false;
 }

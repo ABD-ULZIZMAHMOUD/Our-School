@@ -2,10 +2,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\University;
+use App\Yearuniversity;
 use Illuminate\Support\Facades\Redirect;
 
-class UniversityController extends Controller
+class YearuniversityController extends Controller
 {
     public function addtype(Request $request){
 
@@ -14,49 +14,47 @@ class UniversityController extends Controller
             'name' => 'required'
 
         ]);
-        $count =University::where('name', $request->name)->count();
+        $count =Yearuniversity::where('name', $request->name)->count();
 
         if ($count!=0){
             return Redirect::back()->with('WrongPassword',"تلك الماده الدراسيه موجوده من قبل  ");
 
         }
 
-        $type= new University();
+        $type= new Yearuniversity();
         $type->name=$request['name'];
         $type->save();
 
-        return redirect('/university/allTypes');
+        return redirect('/yearuniversity/allTypes');
 
 
     }
     public function  getalltypes(){
 
-        $allTypes = University::all();
-        return view ("backend.university.showuniversity",compact('allTypes'));
+        $allTypes = Yearuniversity::all();
+        return view ("backend.yearuniversity.showyearuniversity",compact('allTypes'));
 
 
     }
     public function gettype($id){
 
-        $user = University::find($id);
-        return view ("backend.university.edituniversity",compact('user'));
+        $user = Yearuniversity::find($id);
+        return view ("backend.yearuniversity.edityearuniversity",compact('user'));
 
 
     }
     public function edittype(Request $request, $id){
 
 
-        $type =University::find($id);
+        $type =Yearuniversity::find($id);
         $type->name = $request['name'];
-    
         $type->save();
-        return redirect('/university/allTypes');
-
+        return redirect('/yearuniversity/allTypes');
     }
 
     public function deletetype($id){
 
-        $user = University::find($id)->delete();
+        $user = Yearuniversity::find($id)->delete();
         return back();
 
     }
